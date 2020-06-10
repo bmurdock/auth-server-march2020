@@ -1,7 +1,9 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
+// we need to use the filesystem functions
+const fs = require('fs');
 
-const secret = "mysecret";
+const secret = fs.readFileSync('./key.pem', 'utf8');
 
 // fake blog post data
 const posts = [
